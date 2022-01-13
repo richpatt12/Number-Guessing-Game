@@ -1,3 +1,6 @@
+#Possible features:
+#Track High Score 
+#Asks User to play another game
 import random
 #Declares random number between 1-10
 random_number = random.randint(1,10)
@@ -9,11 +12,13 @@ name = input('')
 print(f'Hey {name} lets play a game. I am guessing a number between 1-10')
 #declares guess variable 
 guess = ''
-guess_total=''
+guess_total= 0
+
 while guess != random_number:
     
     guess = int(input('Enter your random number: '))
-    
+    #tracks how many tries it takes user
+    guess_total +=1
     if guess < random_number:
         print(f'Sorry {guess} is too low')
     elif guess > random_number: 
@@ -21,5 +26,8 @@ while guess != random_number:
     else:
         print('You got it!')
         print(f'It took you {guess_total} tries')
+        
+    
+        
 #next step count the users guesses
 input()
